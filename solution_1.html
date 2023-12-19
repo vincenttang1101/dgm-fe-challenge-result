@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge DGM</title>
+    <style>
+      .container {
+        display: block;
+        width: 50vw;
+      }
+      .container img {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        src="https://cmedia.dayta.asia/raw_xxx/20220501/td0040/td0040_20220501100534269_133159.jpg"
+        alt="image"
+      />
+      <canvas id="myCanvas"></canvas>
+    </div>
+
+    <script>
+      const coordinates = [
+        [708, 23.000000000000004],
+        [708, 257],
+        [970, 257],
+        [970, 23.000000000000004],
+      ];
+
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      function drawLabel() {
+        ctx.beginPath();
+        ctx.moveTo(coordinates[0][0], coordinates[0][1]);
+
+        for (let i = 1; i < coordinates.length; i++) {
+          ctx.lineTo(coordinates[i][0], coordinates[i][1]);
+        }
+
+        ctx.closePath();
+        ctx.strokeStyle = "#56E330";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        ctx.fillStyle = "transparent";
+        ctx.fill();
+      }
+
+      const image = document.querySelector(".container img");
+      image.addEventListener("load", () => {
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
+        drawLabel();
+      });
+    </script>
+  </body>
+</html>

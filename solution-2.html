@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge DGM</title>
+    <style>
+      .container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 23.000000000000004px;
+        left: 708px;
+        width: calc(970px - 708px);
+        height: calc(257px - 23.000000000000004px);
+        border: 3px solid #56e330;
+        box-sizing: border-box;
+      }
+
+      .container img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        src="https://cmedia.dayta.asia/raw_xxx/20220501/td0040/td0040_20220501100534269_133159.jpg"
+        alt="image"
+      />
+    </div>
+
+    <script>
+      const coordinates = [
+        [708, 23.000000000000004],
+        [708, 257],
+        [970, 257],
+        [970, 23.000000000000004],
+      ];
+    </script>
+  </body>
+</html>
